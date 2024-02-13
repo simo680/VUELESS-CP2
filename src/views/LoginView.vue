@@ -2,12 +2,12 @@
 
   <form @submit.prevent="handleSubmit" class="">
     <h2>Authorization</h2>
-    <p style="color: red" v-if="res.message">{{res.message }}</p>
+    <p style="color: red" v-if="res.message">{{res.message}}</p>
     <label>Login</label>
     <input type="text" class="" v-model="username" placeholder="username" />
     <label>Password</label>
     <input type="password" class="" v-model="password" placeholder="Password" autocomplete="on" />
-    <button>Submit</button>
+    <button type="submit">Submit</button>
   </form>
 </template>
 
@@ -34,11 +34,14 @@ export default {
 
     if (this.res.token) {
       localStorage.setItem('token', this.res.token);
+      this.$router.replace('/profile')
     } else {
       localStorage.removeItem('token');
     }
   } catch (error) {
     console.error(error);
+
+    this.res.message = error.response.data.message;
   }
 }
   }

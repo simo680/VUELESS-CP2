@@ -8,7 +8,7 @@
         <span>Gender: {{this.response.gender}}</span>
         <span>Email: {{ this.response.email}}</span>
       </div>
-      <img src="" alt="" />
+      <img :src="this.response.image" alt="" />
     </div>
   </div>
 </template>
@@ -39,7 +39,9 @@ export default {
         }
       })
       .catch((error) => {
+
         console.error(error)
+        this.res.message = error.response.data.message;
       })
   }
 }
