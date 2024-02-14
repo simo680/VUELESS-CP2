@@ -55,7 +55,6 @@ export default {
   margin: 50px 50px;
 }
 
-
 .info__profile_img {
   width: 243px;
   height: 243px;

@@ -18,13 +18,14 @@ export default {
     }
   },
   mounted() {
-    axios.get('https://dummyjson.com/users')
-    .then((response) => {
-      this.users = response.data.users;
-    })
-    .catch((error) => {
-      console.error(error);
-    });
+    axios
+      .get('https://dummyjson.com/users')
+      .then((response) => {
+        this.users = response.data.users
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   }
 }
 </script>

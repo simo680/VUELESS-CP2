@@ -6,53 +6,49 @@ import LoginView from '@/views/LoginView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 
 function checkAuth() {
-  let token = localStorage.getItem("token");
+  let token = localStorage.getItem('token')
   if (token !== null) {
-    return true;
-  }
-  else{
+    return true
+  } else {
     return false
   }
 }
-
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      redirect: '/home',
+      redirect: '/home'
     },
     {
       path: '/home',
       name: 'home',
-      component: HomeView,
+      component: HomeView
     },
     {
       path: '/users',
       name: 'users',
-      component: UsersView,
+      component: UsersView
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginView,
+      component: LoginView
     },
     {
       path: '/profile',
       name: 'profile',
-      component: ProfileView,
+      component: ProfileView
     }
-    
   ]
 })
 
-
 router.beforeEach((to, from, next) => {
-  if (to.path === "/profile" && !checkAuth()) {
-    next("/");
+  if (to.path === '/profile' && !checkAuth()) {
+    next('/')
   } else {
-    next();
+    next()
   }
 })
 

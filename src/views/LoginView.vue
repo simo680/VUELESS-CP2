@@ -6,13 +6,19 @@
     </div>
     <div class="form__list">
       <div class="form__list_item">
-      <label class="form__list-title">Login</label>
-      <input type="text" class="form__list-input" v-model="username" placeholder="username" />
-    </div>
-    <div class="form__list_item">
-      <label class="form__list-title">Password</label>
-      <input type="password" class="form__list-input" v-model="password" placeholder="Password" autocomplete="on" />
-    </div>
+        <label class="form__list-title">Login</label>
+        <input type="text" class="form__list-input" v-model="username" placeholder="username" />
+      </div>
+      <div class="form__list_item">
+        <label class="form__list-title">Password</label>
+        <input
+          type="password"
+          class="form__list-input"
+          v-model="password"
+          placeholder="Password"
+          autocomplete="on"
+        />
+      </div>
       <button class="form__list-button" type="submit">Submit</button>
     </div>
   </form>
@@ -62,7 +68,8 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  filter: drop-shadow(0px 0.25px 3px rgba(0, 0, 0, 0.039)) drop-shadow(0px 2.75px 9px rgba(0, 0, 0, 0.19));
+  filter: drop-shadow(0px 0.25px 3px rgba(0, 0, 0, 0.039))
+    drop-shadow(0px 2.75px 9px rgba(0, 0, 0, 0.19));
   border-radius: 15px;
   background-color: white;
   padding: 8px 20px 8px 16px;
